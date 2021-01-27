@@ -81,7 +81,7 @@ def UMWK(x):
     return print(x, "USD to", y, "MWK")
 
 print("Przelicznik walut")
-print("Wybierz walutę z pośród dostępnych: ")
+print("\nWybierz walutę z pośród dostępnych: ")
 print("1) Baht Tajski (THB) - Dolary amerykańskie (USD)")
 print("2) Bitcoin (BTC) - Dolary amerykańskie (USD)")
 print("3) Ngultrum bhutański (BTN) - Dolary amerykańskie(USD)")
