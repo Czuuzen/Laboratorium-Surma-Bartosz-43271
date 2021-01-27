@@ -1,3 +1,10 @@
+def fkwota():
+    global num1
+    try:
+        num1 = float(input("Podaj kwotę brutto: "))
+    except ValueError:
+        print("Nie podałeś kwoty lub błędny zapis!")
+        exit()
 #zaliczka na PIT jest obliczana zgodnie z wzorem na rok 2017, reszta wartości jest aktualna
 def pit():
     num4 = num1 - num2                              #num4 to różnica brutto i wartości ubezpieczeń społecznych (potrzebne do obliczenia pitu)
@@ -21,7 +28,8 @@ def chorobowe(x):
 def zdrowotne(x, y):
     return round((x - y) * 0.09, 2)
 
-wybor1 = input("Czy pracujesz w miejscowości gdzie mieszkasz?(tak/nie): ")
+print("Kalkulator płacy brutto")                    #Z netto na brutto ciężko przeliczyć pod względem matematycznym, o ile w ogóle się da
+wybor1 = input("\nCzy pracujesz w miejscowości gdzie mieszkasz?(tak/nie): ")
 
 if wybor1 in ('tak', 'nie'):
     if wybor1 == 'tak':
@@ -30,10 +38,11 @@ if wybor1 in ('tak', 'nie'):
         numx = 139.06
 
 if wybor1 in ('tak', 'nie'):
-    num1 = float(input("Podaj kwotę brutto: "))
+    num1 = 0
+    fkwota()
     num2 = emerytalne(num1)+rentowe(num1)+chorobowe(num1)       #num2 to wartość ubezpieczeń społecznych
 
-    print("Koszt ubezpieczenia emerytalnego", emerytalne(num1)," PLN")
+    print("\nKoszt ubezpieczenia emerytalnego", emerytalne(num1)," PLN")
     print("Koszt ubezpieczenia rentowego", rentowe(num1)," PLN")
     print("Koszt ubezpieczenia chorobowego", chorobowe(num1)," PLN")
     print("Koszt ubezpieczenia zdrowotnego", zdrowotne(num1, num2)," PLN")
