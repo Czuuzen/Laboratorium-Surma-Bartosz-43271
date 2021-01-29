@@ -28,3 +28,5 @@ print("Dziś jest: " ,tera_data() )
 x = int(input("Podaj rok do określenia daty wielkanocy: "))
 print("Wielkanoc w roku" ,x ,"wypada" ,noc_wielka(x))
 print("Urodziłeś/aś się w:", uro() )
+
+#zadanie wykonane we współpracy :p
